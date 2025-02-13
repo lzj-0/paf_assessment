@@ -29,7 +29,7 @@ public class MoviesApplication implements CommandLineRunner {
 		if (args.length > 0) {
 			file = args[0];
 		} else {
-			file = "../data/movies_post_2010.zip";
+			file = "movies_post_2010.zip";
 		}
 
 		if (mySQLMovieRepo.isEmpty()) {

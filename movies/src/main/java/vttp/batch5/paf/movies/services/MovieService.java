@@ -145,7 +145,7 @@ public class MovieService {
 
       params.put("DIRECTOR_TABLE_DATASET", directorDS);
 
-      InputStream directorReportStream = new FileInputStream(new File("../data/director_movies_report.jrxml"));
+      InputStream directorReportStream = new FileInputStream(new File("director_movies_report.jrxml"));
 
       JasperReport report = JasperCompileManager.compileReport(directorReportStream);
 

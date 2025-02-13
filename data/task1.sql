@@ -20,6 +20,3 @@ create table imdb (
     constraint chk_runtime check(runtime >= 0)
 
 );
-
-grant all privileges on movies.* to 'fred'@'%';
-flush privileges;
