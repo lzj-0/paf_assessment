@@ -34,7 +34,7 @@ public class Dataloader {
   //TODO: Task 2
     public void loadData(String fileName) throws IOException, ParseException {
 
-      ZipFile file = new ZipFile(fileName);
+      ZipFile file = new ZipFile(getClass().getResource(fileName).toString());
       ZipEntry entry = file.getEntry("movies_post_2010.json");
 
       InputStream is = file.getInputStream(entry);

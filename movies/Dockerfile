@@ -8,18 +8,14 @@ COPY src src
 COPY .mvn .mvn
 COPY pom.xml .
 COPY mvnw .
+COPY movies_post_2010.zip .
 
 RUN mvn clean package -Dmaven.test.skip=true
 
 FROM maven:3.9.9-eclipse-temurin-23
 
 COPY --from=builder /myapp/target/movies-0.0.1-SNAPSHOT.jar app.jar
-COPY movies_post_2010.zip .
 COPY director_movies_report.jrxml .
-
-ARG APP_DIR=/movies
-
-WORKDIR ${APP_DIR}
 
 ENV SERVER_PORT=8080
 
